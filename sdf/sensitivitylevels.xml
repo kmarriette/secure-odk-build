@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sensitivitylevel>
+  <name>Public</name>
+  <description>Not sensitive at all</description>
+  <name>Confidential</name>
+  <description>Moderately sensitive</description>
+  <name>Critical</name>
+  <description>Highly sensitive</description>
+</sensitivitylevel>

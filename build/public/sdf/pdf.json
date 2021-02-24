@@ -1,0 +1,125 @@
+{
+	"form": {
+		"title": "patientmonitoring",
+		"ccprofile":"cc1",
+		"attributes": [
+			{
+				"name": "disease",
+				"level": "",
+				"psparams": [
+						{
+							"name": "severity",
+							"aspect": "value",
+							"conds": [
+								{
+									"op": "gt",
+									"value1": "75",
+									"level": "public"
+								},
+								{
+									"op": "bt",
+									"value1": "50",
+									"value2": "75",
+									"level": "confidential"
+								},
+								{
+									"op": "lt",
+									"value1": "50",
+									"level": "critical"
+								}
+							]
+						},
+						{
+							"name": "mortality",
+							"aspect": "value",
+							"conds": [
+								{
+									"op": "lt",
+									"value1": "40",
+									"level": "public"
+								},
+								{
+									"op": "bt",
+									"value1": "50",
+									"value2": "75",
+									"level": "confidential"
+								},
+								{
+									"op": "lt",
+									"value1": "50",
+									"level": "critical"
+								}
+							]
+						},
+						{
+							"name": "incidences",
+							"aspect": "value",
+							"conds": [
+								{
+									"op": "eq",
+									"value1": "low",
+									"level": "public"
+								},
+								{
+									"op": "eq",
+									"value1": "moderate",
+									"level": "confidential"
+								},
+								{
+									"op": "eq",
+									"value1": "high",
+									"level": "critical"
+								}
+							]
+						},
+						{
+							"name": "location",
+							"aspect": "value",
+							"conds": [
+								{
+									"op": "eq",
+									"value1": "central",
+									"level": "public"
+								},
+								{
+									"op": "eq",
+									"value1": "western",
+									"level": "confidential"
+								},
+								{
+									"op": "eq",
+									"value1": "nothern",
+									"level": "critical"
+								}
+							]
+						}
+					]
+
+			},
+			{
+				"name": "firstName",
+				"level": "critical"
+
+			},
+			{
+				"name": "lastName",
+				"level": "confidential"
+
+			},
+			{
+				"name": "phoneNumber",
+				"level": "confidential"
+
+			},
+			{
+				"name": "dob",
+				"level": "confidential"
+
+			},
+			{
+				"name": "abortions",
+				"level": "critical"
+			}
+		]
+	}
+}

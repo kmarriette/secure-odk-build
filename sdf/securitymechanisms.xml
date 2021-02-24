@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securitymechanism>
+  <name>Encryption</name>
+    <algorithm>AES256</algorithm>
+    <algorithm>AES126</algorithm>
+    <algorithm>DES</algorithm>
+    <algorithm>3DES</algorithm>
+    <algorithm>Blowfish</algorithm>
+  <name>Storage</name>
+    <area>Internal</area>
+    <area>External</area>
+    <area>Internal Shareable</area>
+  <name>Mask</name>
+  <algorithm>Asterisk</algorithm>
+</securitymechanism>

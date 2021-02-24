@@ -1,0 +1,82 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Test Form</h:title>
+    <model>
+      <instance>
+        <data id="build_Test-Form_1553618868">
+          <meta>
+            <instanceID/>
+          </meta>
+          <firstname/>
+          <lastname/>
+          <dob/>
+          <sex/>
+          <cd4-count/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="English">
+          <text id="/data/firstname:label">
+            <value>First Name</value>
+          </text>
+          <text id="/data/lastname:label">
+            <value>Last Name</value>
+          </text>
+          <text id="/data/dob:label">
+            <value>Date of Birth</value>
+          </text>
+          <text id="/data/sex:label">
+            <value>Gender</value>
+          </text>
+          <text id="/data/sex:option0">
+            <value>Female</value>
+          </text>
+          <text id="/data/sex:option1">
+            <value>Male</value>
+          </text>
+          <text id="/data/sex:option2">
+            <value>Other</value>
+          </text>
+          <text id="/data/cd4-count:label">
+            <value>CD4 Count</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+      <bind nodeset="/data/firstname" type="string" required="true()"/>
+      <bind nodeset="/data/lastname" type="string" required="true()"/>
+      <bind nodeset="/data/dob" type="date"/>
+      <bind nodeset="/data/sex" type="select1"/>
+      <bind nodeset="/data/cd4-count" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/firstname">
+      <label ref="jr:itext('/data/firstname:label')"/>
+    </input>
+    <input ref="/data/lastname">
+      <label ref="jr:itext('/data/lastname:label')"/>
+    </input>
+    <input ref="/data/dob">
+      <label ref="jr:itext('/data/dob:label')"/>
+    </input>
+    <select1 ref="/data/sex">
+      <label ref="jr:itext('/data/sex:label')"/>
+      <item>
+        <label ref="jr:itext('/data/sex:option0')"/>
+        <value>female</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/sex:option1')"/>
+        <value>male</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/sex:option2')"/>
+        <value>others</value>
+      </item>
+    </select1>
+    <input ref="/data/cd4-count">
+      <label ref="jr:itext('/data/cd4-count:label')"/>
+    </input>
+  </h:body>
+</h:html>

@@ -1,0 +1,81 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Demo Form</h:title>
+    <model>
+      <instance>
+        <data id="build_Demo-Form_1553618837">
+          <meta>
+            <instanceID/>
+          </meta>
+          <names/>
+          <village/>
+          <salary/>
+          <property/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="English">
+          <text id="/data/names:label">
+            <value>Names</value>
+          </text>
+          <text id="/data/village:label">
+            <value>Village</value>
+          </text>
+          <text id="/data/salary:label">
+            <value>Salary</value>
+          </text>
+          <text id="/data/property:label">
+            <value>Property</value>
+          </text>
+          <text id="/data/property:option0">
+            <value>Cattle</value>
+          </text>
+          <text id="/data/property:option1">
+            <value>Goats</value>
+          </text>
+          <text id="/data/property:option2">
+            <value>Land</value>
+          </text>
+          <text id="/data/property:option3">
+            <value>Buildings</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+      <bind nodeset="/data/names" type="string" required="true()"/>
+      <bind nodeset="/data/village" type="string" required="true()"/>
+      <bind nodeset="/data/salary" type="string" required="true()"/>
+      <bind nodeset="/data/property" type="select"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/names">
+      <label ref="jr:itext('/data/names:label')"/>
+    </input>
+    <input ref="/data/village">
+      <label ref="jr:itext('/data/village:label')"/>
+    </input>
+    <input ref="/data/salary">
+      <label ref="jr:itext('/data/salary:label')"/>
+    </input>
+    <select ref="/data/property">
+      <label ref="jr:itext('/data/property:label')"/>
+      <item>
+        <label ref="jr:itext('/data/property:option0')"/>
+        <value>cattle</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/property:option1')"/>
+        <value>goats</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/property:option2')"/>
+        <value>land</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/property:option3')"/>
+        <value>buildings</value>
+      </item>
+    </select>
+  </h:body>
+</h:html>

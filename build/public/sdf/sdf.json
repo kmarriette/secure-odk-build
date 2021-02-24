@@ -1,0 +1,49 @@
+{
+	"contextcategories": [
+		{
+			"name": "cc1",
+			"public": {
+				"encryption": "DES",
+				"masking": "Yes"
+			},
+			"confidential": {
+				"encryption": "AES128",
+				"masking": "Yes"
+			},
+			"critical": {
+				"encryption": "AES256",
+				"masking": "Yes"
+			}
+		},
+		{
+			"name": "cc2",
+			"public": {
+				"encryption": "DES",
+				"masking": "No"
+			},
+			"confidential": {
+				"encryption": "3DES",
+				"masking": "Yes"
+			},
+			"critical": {
+				"encryption": "AES128",
+				"masking": "Yes"
+			}
+		},
+		{
+			"name": "cc3",
+			"public": {
+				"encryption": "No",
+				"masking": "No"
+			},
+			"confidential": {
+				"encryption": "3DES",
+				"masking": "Yes"
+			},
+			"critical": {
+				"encryption": "Blowfish",
+				"masking": "Yes"
+			}
+		}
+	]
+}

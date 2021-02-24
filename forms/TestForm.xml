@@ -1,0 +1,82 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Test Form</h:title>
+    <model>
+      <instance>
+        <data id="build_Test-Form_1553153926">
+          <meta>
+            <instanceID/>
+          </meta>
+          <firstname/>
+          <lastname/>
+          <dob/>
+          <gender/>
+          <hivstatus/>
+        </data>
+      </instance>
+      <itext>
+        <translation lang="English">
+          <text id="/data/firstname:label">
+            <value>First Name</value>
+          </text>
+          <text id="/data/lastname:label">
+            <value>Last Name</value>
+          </text>
+          <text id="/data/dob:label">
+            <value>Date of Birth</value>
+          </text>
+          <text id="/data/gender:label">
+            <value>Gender</value>
+          </text>
+          <text id="/data/gender:option0">
+            <value>Feamle</value>
+          </text>
+          <text id="/data/gender:option1">
+            <value>Male</value>
+          </text>
+          <text id="/data/gender:option2">
+            <value>Other</value>
+          </text>
+          <text id="/data/hivstatus:label">
+            <value>HIV Status</value>
+          </text>
+        </translation>
+      </itext>
+      <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+      <bind nodeset="/data/firstname" type="string" required="true()"/>
+      <bind nodeset="/data/lastname" type="string" required="true()"/>
+      <bind nodeset="/data/dob" type="date"/>
+      <bind nodeset="/data/gender" type="select"/>
+      <bind nodeset="/data/hivstatus" type="string" required="true()"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/data/firstname">
+      <label ref="jr:itext('/data/firstname:label')"/>
+    </input>
+    <input ref="/data/lastname">
+      <label ref="jr:itext('/data/lastname:label')"/>
+    </input>
+    <input ref="/data/dob">
+      <label ref="jr:itext('/data/dob:label')"/>
+    </input>
+    <select ref="/data/gender">
+      <label ref="jr:itext('/data/gender:label')"/>
+      <item>
+        <label ref="jr:itext('/data/gender:option0')"/>
+        <value>Female</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/gender:option1')"/>
+        <value>Male</value>
+      </item>
+      <item>
+        <label ref="jr:itext('/data/gender:option2')"/>
+        <value>other</value>
+      </item>
+    </select>
+    <input ref="/data/hivstatus">
+      <label ref="jr:itext('/data/hivstatus:label')"/>
+    </input>
+  </h:body>
+</h:html>
